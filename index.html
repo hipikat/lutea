@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" data-theme="fl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lutea style preview</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body class="min-h-screen p-6">
+    <main class="mx-auto max-w-4xl">
+      <h1>Lutea style preview</h1>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <section id="fl" data-theme="fl" class="rounded-box bg-base-100 p-6 text-base-content">
+          <h2>fl · light</h2>
+          <p>A paragraph with <strong>bold</strong>, <em>italic</em> and a <a href="#fl">sample link</a>.</p>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-accent">Accent</button>
+          </div>
+          <pre class="mt-6 rounded-box bg-base-200 p-4 font-mono"><code>const theme = "fl";</code></pre>
+        </section>
+        <section id="ad" data-theme="ad" class="rounded-box bg-base-100 p-6 text-base-content">
+          <h2>ad · dark</h2>
+          <p>A paragraph with <strong>bold</strong>, <em>italic</em> and a <a href="#ad">sample link</a>.</p>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-accent">Accent</button>
+          </div>
+          <pre class="mt-6 rounded-box bg-base-200 p-4 font-mono"><code>const theme = "ad";</code></pre>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

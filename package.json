@@ -15,11 +15,26 @@
     "url": "https://github.com/hipikat/lutea/issues"
   },
   "engines": {
-    "node": "^26.0.0"
+    "node": "^26.0.0",
+    "pnpm": ">=12.2.0"
   },
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "vite": "pnpm run vite:prod && pnpm run vite:debug",
+    "vite:debug": "NODE_ENV=development vite build --mode development --minify false --sourcemap --manifest manifest.json --outDir build/vite/debug",
+    "vite:prod": "NODE_ENV=production vite build --mode production --sourcemap --manifest manifest.json --outDir build/vite/prod",
+    "watch:vite": "pnpm run \"/^watch:vite:(debug|prod)$/\"",
+    "watch:vite:debug": "pnpm run vite:debug --watch",
+    "watch:vite:prod": "pnpm run vite:prod --watch",
+    "build": "pnpm run vite",
+    "build:debug": "pnpm run vite:debug",
+    "build:prod": "pnpm run vite:prod",
+    "watch:build": "pnpm run watch:vite",
+    "watch:build:debug": "pnpm run watch:vite:debug",
+    "watch:build:prod": "pnpm run watch:vite:prod",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -27,6 +42,7 @@
     "oxlint": "^1.87.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
-    "vite": "^8.3.4"
+    "vite": "^8.3.4",
+    "vitest": "^5.0.3"
   }
 }
