@@ -1,0 +1,16 @@
+# Environments
+.venv
+node_modules
+
+# Logs                                                                                                                [0/42]
+logs
+*.log
+
+# Transient files
+*.swp
+
+# Editor stuff
+*.code-workspace
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

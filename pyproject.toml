@@ -1,0 +1,21 @@
+[project]
+name = "lutea"
+version = "0.0.1"
+requires-python = ">=3.15"
+description = "The ready-to-go Wagtail-based CMS & blog"
+authors = [
+  { name = "Ada Wright", email = "ada@hpk.io" }
+    ]
+keywords = ["cms", "blog", "django", "wagtail"]
+license = { file = "LICENSE.md" }
+readme = "README.md"
+dependencies = [
+    "wagtail~=8.0",
+    "wagtail-modeladmin~=2.5.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.0",
+]

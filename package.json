@@ -1,0 +1,32 @@
+{
+  "name": "lutea",
+  "version": "1.0.0",
+  "description": "Node tooling for the Lutea CMS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hipikat/lutea.git"
+  },
+  "keywords": [],
+  "author": "Ada Wright",
+  "license": "MIT",
+  "homepage": "https://github.com/hipikat/lutea",
+  "bugs": {
+    "url": "https://github.com/hipikat/lutea/issues"
+  },
+  "engines": {
+    "node": "^26.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "daisyui": "^5.7.47",
+    "oxlint": "^1.87.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}
