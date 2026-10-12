@@ -1,0 +1,37 @@
+@import "./system/index.css";
+@import "./picata/index.css";
+
+@theme inline {
+  --font-body: var(--lutea-font-body);
+  --font-serif: var(--lutea-font-body);
+  --font-heading: var(--lutea-font-heading);
+  --font-cursive: var(--lutea-font-cursive);
+  --font-highlight: var(--lutea-font-highlight);
+  --font-mono: var(--lutea-font-mono);
+  --text-xs: var(--lutea-text-xs);
+  --text-sm: var(--lutea-text-sm);
+  --text-base: var(--lutea-text-base);
+  --text-lg: var(--lutea-text-lg);
+  --text-xl: var(--lutea-text-xl);
+  --text-2xl: var(--lutea-text-2xl);
+  --text-3xl: var(--lutea-text-3xl);
+  --text-xs--line-height: var(--lutea-leading-xs);
+  --text-sm--line-height: var(--lutea-leading-sm);
+  --text-base--line-height: var(--lutea-leading-base);
+  --text-lg--line-height: var(--lutea-leading-lg);
+  --text-xl--line-height: var(--lutea-leading-xl);
+  --text-2xl--line-height: var(--lutea-leading-2xl);
+  --text-3xl--line-height: var(--lutea-leading-3xl);
+}
+
+@layer base {
+  [data-font] {
+    font-family: var(--lutea-font-body);
+    font-weight: var(--lutea-font-weight-body);
+    line-height: 1.6;
+  }
+
+  [data-font]:not(html) {
+    font-size: var(--lutea-text-base);
+  }
+}

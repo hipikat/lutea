@@ -1,23 +1,78 @@
 @layer base {
+  :root {
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+  }
+
   body {
-    @apply bg-base-100 text-base-content font-serif;
+    @apply bg-base-100 text-base-content font-body;
+    font-size: var(--lutea-text-base);
+    font-weight: var(--lutea-font-weight-body);
     line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold leading-tight;
+    @apply font-heading scroll-mt-8;
+    font-weight: var(--lutea-font-weight-heading);
+
+    &:not(:first-child) {
+      @apply mt-8;
+    }
   }
 
   h1 {
-    @apply text-3xl;
+    @apply text-3xl leading-tight;
   }
 
   h2 {
-    @apply text-2xl;
+    @apply text-2xl leading-tight;
   }
 
-  p {
+  h3 {
+    @apply text-xl leading-snug;
+  }
+
+  h4 {
+    @apply text-lg leading-normal;
+  }
+
+  h5 {
+    @apply text-base leading-relaxed;
+  }
+
+  h6 {
+    @apply text-sm leading-relaxed;
+  }
+
+  p, ul, ol {
     @apply my-4;
+  }
+
+  strong, b {
+    @apply font-bold;
+  }
+
+  em, i {
+    @apply italic;
+  }
+
+  code, pre {
+    @apply font-mono;
+    font-weight: var(--lutea-font-weight-code);
+
+    &.strong {
+      @apply font-semibold;
+    }
+  }
+
+  .highlight {
+    @apply font-highlight font-bold;
   }
 
   a {

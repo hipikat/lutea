@@ -1,0 +1,29 @@
+@layer components {
+  [data-layout="split-view"] {
+    @apply flex flex-col flex-wrap items-start gap-x-12 gap-y-4;
+
+    > div {
+      @apply flex w-full flex-col justify-start text-center;
+
+      > * {
+        @apply mx-auto;
+      }
+    }
+
+    @variant sm {
+      @apply flex-row;
+
+      > div {
+        flex: 0 0 calc(50% - 1.5rem);
+        @apply justify-center;
+      }
+
+      &::before {
+        content: "";
+        @apply absolute inset-y-0 w-0.5 bg-base-100;
+        left: calc(50% - 1px);
+        pointer-events: none;
+      }
+    }
+  }
+}

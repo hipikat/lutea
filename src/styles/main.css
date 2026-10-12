@@ -1,6 +1,8 @@
 @import "tailwindcss" source(none);
-@import "./themes.css";
+@import "./colours/index.css";
+@import "./fonts/index.css";
 @import "./base.css";
+@import "./layouts/index.css";
 
 @source "..";
 @source "../../index.html";

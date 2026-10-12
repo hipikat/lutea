@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("./assets/ZillaSlab-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("./assets/ZillaSlab-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("./assets/ZillaSlab-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("./assets/ZillaSlab-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("./assets/Bitter-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("./assets/Bitter-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sacramento";
+  src: url("./assets/Sacramento-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zilla Slab Highlight";
+  src: url("./assets/ZillaSlabHighlight-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: url("./assets/FiraCode-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: url("./assets/FiraCode-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  [data-font="picata"] {
+    --lutea-font-body: "Zilla Slab", ui-serif, Georgia, serif;
+    --lutea-font-heading: "Bitter", ui-serif, Georgia, serif;
+    --lutea-font-cursive: "Sacramento", cursive;
+    --lutea-font-highlight: "Zilla Slab Highlight", ui-serif, Georgia, serif;
+    --lutea-font-mono: "Fira Code", ui-monospace, monospace;
+    --lutea-font-weight-body: 300;
+    --lutea-font-weight-heading: 300;
+    --lutea-font-weight-code: 300;
+    --lutea-text-xs: 0.9rem;
+    --lutea-text-sm: 1rem;
+    --lutea-text-base: 1.2rem;
+    --lutea-text-lg: 1.125rem;
+    --lutea-text-xl: 1.25rem;
+    --lutea-text-2xl: 1.5rem;
+    --lutea-text-3xl: 1.875rem;
+    --lutea-leading-xs: 1.6;
+    --lutea-leading-sm: 1.6;
+    --lutea-leading-base: 1.6;
+    --lutea-leading-lg: 1.6;
+    --lutea-leading-xl: 1.4;
+    --lutea-leading-2xl: 1.4;
+    --lutea-leading-3xl: 1.4;
+  }
+}

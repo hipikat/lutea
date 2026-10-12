@@ -1,0 +1,39 @@
+@layer components {
+  [data-layout="definition-list"] {
+    @apply flex flex-col;
+
+    > dl {
+      @apply flex w-full flex-wrap self-start;
+
+      > dt, > dd {
+        @apply w-full text-left;
+      }
+
+      > dt:not(:first-child) {
+        @apply mt-4;
+      }
+    }
+
+    @variant sm {
+      > dl {
+        > dt {
+          @apply w-1/4 flex-none pr-8 text-right;
+        }
+
+        > dt:not(:first-child) {
+          margin-top: 0;
+        }
+
+        > dd {
+          @apply w-3/4 flex-none pl-2;
+        }
+      }
+
+      &::before {
+        content: "";
+        @apply absolute inset-y-0 left-1/4 w-0.5 bg-base-100;
+        pointer-events: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@layer components {
+  .page-container {
+    @apply mx-auto w-full px-7;
+    padding-left: max(1.75rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.75rem, env(safe-area-inset-right, 0px));
+
+    @variant sm {
+      max-width: 53rem;
+    }
+
+    @variant lg {
+      max-width: 62rem;
+    }
+
+    @variant xl {
+      max-width: 72rem;
+    }
+
+    @variant 2xl {
+      max-width: 86rem;
+    }
+  }
+
+  .lutea-page {
+    @apply flex min-h-screen flex-col;
+
+    > header, > footer {
+      @apply relative z-30 bg-base-300 py-5;
+    }
+
+    > header {
+      @apply shadow-lg;
+    }
+
+    > main {
+      @apply grow bg-base-200 pt-10 pb-6;
+    }
+
+    > footer {
+      box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1), 0 -2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+  }
+
+  [data-layout] {
+    @apply relative min-w-0 w-full;
+
+    > article, > aside, > nav, > div {
+      min-width: 0;
+    }
+  }
+}

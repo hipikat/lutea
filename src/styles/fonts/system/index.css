@@ -1,0 +1,27 @@
+@layer base {
+  [data-font="system"] {
+    --lutea-font-body: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --lutea-font-heading: var(--lutea-font-body);
+    --lutea-font-cursive: cursive;
+    --lutea-font-highlight: var(--lutea-font-body);
+    --lutea-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+    --lutea-font-weight-body: 400;
+    --lutea-font-weight-heading: 600;
+    --lutea-font-weight-code: 400;
+    --lutea-text-xs: 0.75rem;
+    --lutea-text-sm: 0.875rem;
+    --lutea-text-base: 1rem;
+    --lutea-text-lg: 1.125rem;
+    --lutea-text-xl: 1.25rem;
+    --lutea-text-2xl: 1.5rem;
+    --lutea-text-3xl: 1.875rem;
+    --lutea-leading-xs: 1rem;
+    --lutea-leading-sm: 1.25rem;
+    --lutea-leading-base: 1.5rem;
+    --lutea-leading-lg: 1.75rem;
+    --lutea-leading-xl: 1.75rem;
+    --lutea-leading-2xl: 2rem;
+    --lutea-leading-3xl: 2.25rem;
+  }
+}

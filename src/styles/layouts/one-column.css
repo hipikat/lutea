@@ -1,0 +1,9 @@
+@layer components {
+  [data-layout="one-column"] {
+    @apply flex;
+
+    > article {
+      @apply mx-auto max-w-full;
+    }
+  }
+}
