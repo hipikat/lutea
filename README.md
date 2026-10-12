@@ -14,6 +14,29 @@ pnpm build       # Build production and debug CSS assets
 pnpm watch:build # Watch both CSS builds
 ```
 
+## Project scaffold
+
+The Copier configuration lives at the repository root and renders only the
+`scaffold/` directory. This first scaffold generates a `pyproject.toml` containing
+a Lutea dependency; it does not create a runnable website yet.
+
+From this checkout, generate a project with:
+
+```sh
+uvx copier copy --vcs-ref HEAD . ../lutea-site
+```
+
+Use `--vcs-ref HEAD` for development and scaffold tests so Copier uses the current
+checkout, including uncommitted template changes, rather than selecting the
+latest release tag.
+
+Copier asks “Are you developing lutea right now?” (default: No). Answering Yes
+adds an editable uv source pointing to the absolute path of the local Lutea
+checkout supplied to Copier. The generated project can live anywhere. Use a
+local checkout as the template source when developing Lutea; Copier's temporary
+template clone is not the editable source.
+Answering No leaves `lutea` as a normal package dependency.
+
 ## Static assets
 
 The stylesheet entrypoint is `src/styles/main.css`. Builds emit standalone CSS

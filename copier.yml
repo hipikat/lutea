@@ -1,0 +1,6 @@
+_subdirectory: scaffold
+
+develop_lutea:
+  type: bool
+  help: Are you developing lutea right now?
+  default: false

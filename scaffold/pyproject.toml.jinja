@@ -1,0 +1,12 @@
+[project]
+name = "lutea-site"
+version = "0.0.1"
+requires-python = ">=3.15"
+dependencies = [
+    "lutea",
+]
+{% if develop_lutea %}
+
+[tool.uv.sources]
+lutea = { path = {{ _copier_answers._src_path | expanduser | realpath | to_json(ensure_ascii=false) }}, editable = true }
+{% endif %}
