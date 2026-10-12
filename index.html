@@ -1,36 +1,133 @@
 <!doctype html>
-<html lang="en" data-theme="fl">
+<html lang="en" data-theme="picata" data-mode="light" data-font="picata">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Lutea style preview</title>
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
-  <body class="min-h-screen p-6">
-    <main class="mx-auto max-w-4xl">
-      <h1>Lutea style preview</h1>
-      <div class="mt-6 grid gap-6 md:grid-cols-2">
-        <section id="fl" data-theme="fl" class="rounded-box bg-base-100 p-6 text-base-content">
-          <h2>fl · light</h2>
-          <p>A paragraph with <strong>bold</strong>, <em>italic</em> and a <a href="#fl">sample link</a>.</p>
+  <body class="lutea-page">
+    <header>
+      <div class="page-container">
+        <h1>Lutea style preview</h1>
+        <nav aria-label="Preview sections" class="mt-4 flex flex-wrap gap-6">
+          <a href="#themes">Colours</a>
+          <a href="#fonts">Fonts</a>
+          <a href="#layouts">Layouts</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page-container">
+      <h2 id="themes">Colour themes</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2" data-font="system">
+        <section id="picata-light" data-theme="picata" data-mode="light" class="rounded-box bg-base-100 p-6 text-base-content">
+          <h2>Picata · light</h2>
+          <p>A paragraph with <strong>bold</strong>, <em>italic</em> and a <a href="#picata-light">sample link</a>.</p>
           <div class="flex flex-wrap gap-2">
             <button type="button" class="btn btn-primary">Primary</button>
             <button type="button" class="btn btn-secondary">Secondary</button>
             <button type="button" class="btn btn-accent">Accent</button>
           </div>
-          <pre class="mt-6 rounded-box bg-base-200 p-4 font-mono"><code>const theme = "fl";</code></pre>
+          <pre class="mt-6 rounded-box bg-base-200 p-4 font-mono"><code>const theme = "picata";
+const mode = "light";</code></pre>
         </section>
-        <section id="ad" data-theme="ad" class="rounded-box bg-base-100 p-6 text-base-content">
-          <h2>ad · dark</h2>
-          <p>A paragraph with <strong>bold</strong>, <em>italic</em> and a <a href="#ad">sample link</a>.</p>
+        <section id="picata-dark" data-theme="picata" data-mode="dark" class="rounded-box bg-base-100 p-6 text-base-content">
+          <h2>Picata · dark</h2>
+          <p>A paragraph with <strong>bold</strong>, <em>italic</em> and a <a href="#picata-dark">sample link</a>.</p>
           <div class="flex flex-wrap gap-2">
             <button type="button" class="btn btn-primary">Primary</button>
             <button type="button" class="btn btn-secondary">Secondary</button>
             <button type="button" class="btn btn-accent">Accent</button>
           </div>
-          <pre class="mt-6 rounded-box bg-base-200 p-4 font-mono"><code>const theme = "ad";</code></pre>
+          <pre class="mt-6 rounded-box bg-base-200 p-4 font-mono"><code>const theme = "picata";
+const mode = "dark";</code></pre>
+        </section>
+      </div>
+
+      <h2 id="fonts">Font themes</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <section data-font="system" class="rounded-box bg-base-100 p-6">
+          <h3>System</h3>
+          <p>A paragraph with <strong>bold</strong> and <em>italic</em>.</p>
+          <p class="font-cursive text-3xl">A cursive accent</p>
+          <p><span class="highlight">Highlighted words</span></p>
+          <pre class="overflow-x-auto"><code>const fonts = "system";</code></pre>
+        </section>
+        <section data-font="picata" class="rounded-box bg-base-100 p-6">
+          <h3>Picata</h3>
+          <p>A paragraph with <strong>bold</strong> and <em>italic</em>.</p>
+          <p class="font-cursive text-3xl">A cursive accent</p>
+          <p><span class="highlight">Highlighted words</span></p>
+          <pre class="overflow-x-auto"><code>const fonts = "picata";</code></pre>
+        </section>
+      </div>
+
+      <h2 id="layouts">Page layouts</h2>
+      <h3>One column · Picata light · Picata fonts</h3>
+      <div class="mt-4 rounded-box bg-base-100 p-6" data-theme="picata" data-mode="light" data-font="picata">
+        <section data-layout="one-column" aria-label="One-column specimen">
+          <article>
+            <h4>A centred article</h4>
+            <p>The article sits in a single column. A short paragraph demonstrates the selected body font.</p>
+            <p>Layout, fonts and colours can be chosen independently.</p>
+          </article>
+        </section>
+      </div>
+
+      <h3>Split view · Picata dark · system fonts</h3>
+      <div class="mt-4 rounded-box bg-base-100 p-6 text-base-content" data-theme="picata" data-mode="dark" data-font="system">
+        <section data-layout="split-view" aria-label="Split-view specimen">
+          <div>
+            <h4>First column</h4>
+            <p>Content stacks on small screens.</p>
+          </div>
+          <div>
+            <h4>Second column</h4>
+            <p>From the small breakpoint, the columns share the space around a central divider.</p>
+          </div>
+        </section>
+      </div>
+
+      <h3>Definition list · Picata light · system fonts</h3>
+      <div class="mt-4 rounded-box bg-base-100 p-6" data-theme="picata" data-mode="light" data-font="system">
+        <section data-layout="definition-list" aria-label="Definition-list specimen">
+          <dl>
+            <dt><strong>First entry</strong></dt>
+            <dd>A quarter-width label and three-quarter-width description on wider screens.</dd>
+            <dt><strong>Second entry</strong></dt>
+            <dd>Labels sit above their descriptions on small screens.</dd>
+          </dl>
+        </section>
+      </div>
+
+      <h3>Three columns · Picata dark · Picata fonts</h3>
+      <div class="mt-4 rounded-box bg-base-100 p-6 text-base-content" data-theme="picata" data-mode="dark" data-font="picata">
+        <section data-layout="three-column" aria-label="Three-column specimen">
+          <aside>
+            <h4>About this article</h4>
+            <p>Metadata and related material.</p>
+          </aside>
+          <nav aria-label="Example article contents">
+            <div class="toc">
+              <strong>Contents</strong>
+              <ul>
+                <li><a href="#article-start">Introduction</a></li>
+                <li><a href="#article-detail">Details</a></li>
+              </ul>
+            </div>
+          </nav>
+          <article>
+            <h4 id="article-start">An article with sidebars</h4>
+            <p>On large screens, the article takes the middle half, with a quarter-width sidebar on each side.</p>
+            <h5 id="article-detail">Responsive ordering</h5>
+            <p>At intermediate widths, metadata and navigation share the left column. On small screens, navigation comes first, then the article and metadata.</p>
+            <pre class="overflow-x-auto"><code>const layout = "three-column";</code></pre>
+          </article>
         </section>
       </div>
     </main>
+    <footer>
+      <div class="page-container">Lutea style specimens</div>
+    </footer>
   </body>
 </html>

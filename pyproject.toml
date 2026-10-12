@@ -6,7 +6,7 @@ description = "The ready-to-go Wagtail-based CMS & blog"
 authors = [
   { name = "Ada Wright", email = "ada@hpk.io" }
     ]
-keywords = ["cms", "blog", "django", "wagtail"]
+keywords = ["cms", "blog", "django", "wagtail", "backend"]
 license = { file = "LICENSE.md" }
 readme = "README.md"
 dependencies = [
