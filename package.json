@@ -38,11 +38,11 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
-    "daisyui": "^5.7.47",
-    "oxlint": "^1.87.0",
+    "daisyui": "^5.7.50",
+    "oxlint": "^1.89.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
-    "vite": "^8.3.4",
-    "vitest": "^5.0.3"
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
   }
 }
