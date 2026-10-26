@@ -17,8 +17,32 @@ pnpm watch:build # Watch both CSS builds
 ## Project scaffold
 
 The Copier configuration lives at the repository root and renders only the
-`scaffold/` directory. This first scaffold generates a `pyproject.toml` containing
-a Lutea dependency; it does not create a runnable website yet.
+`scaffold/` directory. The scaffold generates a `pyproject.toml` containing a
+Lutea dependency and a root `Justfile` importing `config/lutea.justfile`. The
+imported recipes provide Python environment helpers, `py`/`dj` command wrappers
+and Justfile formatting. The `dj` wrapper requires `src/manage.py`, which the
+scaffold does not generate yet; it does not create a runnable website.
+
+Copier uses `<%= ... %>` for expressions, `<% ... %>` for blocks and `<%# ... %>`
+for comments. Files requiring interpolation end in `.jinja`; their generated
+counterparts omit that suffix. Just and Django expressions, Bash tests and POSIX
+character classes are preserved without raw blocks. These Copier markers overlap
+with EJS, ERB and Mako templates; copy those files without a `.jinja` suffix, or
+escape their literal tags when they also need Copier interpolation.
+
+Questions validate answers before rendering. Site and owner names must be
+nonblank printable text without surrounding whitespace. Module names use
+lowercase ASCII letters, digits and underscores, start with a letter and cannot
+be Python keywords. Owner usernames follow a conservative Unix naming policy:
+1–32 ASCII letters of either case, digits, underscores or hyphens, starting with a
+letter. Email addresses use common unquoted ASCII mailbox syntax with a dotted
+hostname; validation does not check delivery or account existence. Full name and
+email are required, and the generated environment uses `OWNER_USERNAME`.
+
+The module name defaults from the site name, and the owner username defaults
+from the owner's full name, using lowercase text with spaces replaced by
+underscores. Override these defaults with `--data module_name=...` or
+`--data owner_username=...` when names contain unsuitable punctuation or Unicode.
 
 From this checkout, generate a project with:
 
