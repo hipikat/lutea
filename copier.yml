@@ -69,6 +69,16 @@ owner_username:
     Use 1–32 ASCII letters, digits, underscores or hyphens; start with a letter.
     <% endif %>
 
+development_target:
+  type: str
+  help: Target for the development environment.
+  default: local
+  choices:
+    - local
+    - docker
+    - incus
+    - digital_ocean
+
 developing_lutea:
   type: bool
   help: Install lutea as a path-relative editable package?
