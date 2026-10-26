@@ -1,6 +1,76 @@
 _subdirectory: scaffold
 
-develop_lutea:
+_envops:
+  variable_start_string: "<%="
+  variable_end_string: "%>"
+  block_start_string: "<%"
+  block_end_string: "%>"
+  comment_start_string: "<%#"
+  comment_end_string: "%>"
+
+site_name:
+  type: str
+  help: Proper name for the site. (Title Case is suggested.)
+  placeholder: "My Website"
+  validator: >-
+    <% if not site_name.strip() or not site_name.isprintable() or site_name != site_name.strip() %>
+    Enter a non-blank site name without control characters or surrounding whitespace.
+    <% endif %>
+
+description:
+  type: str
+  help: Short description of the site.
+  placeholder: "A short description of the site."
+  default: ""
+
+module_name:
+  type: str
+  help: Name of the package. (lower_snake_case is required.)
+  default: "<%= site_name | lower | replace(' ', '_') %>"
+  validator: >-
+    <% set keywords = [
+      'False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await',
+      'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except',
+      'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is',
+      'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try',
+      'while', 'with', 'yield'
+    ] %>
+    <% if not (module_name | regex_search('\\A[a-z][a-z0-9_]*\\Z')) %>
+    Use lowercase ASCII letters, digits, and underscores, and start with a letter.
+    <% elif module_name in keywords %>
+    Python keywords cannot be used for the package name.
+    <% endif %>
+
+owner_fullname:
+  type: str
+  help: Full name of the project author.
+  validator: >-
+    <% if not owner_fullname.strip() or not owner_fullname.isprintable() or owner_fullname != owner_fullname.strip() %>
+    Enter a non-blank full name without control characters or surrounding whitespace.
+    <% endif %>
+
+owner_email:
+  type: str
+  help: Email address of the project author.
+  validator: >-
+    <% set atom = "[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+" %>
+    <% set label = '[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?' %>
+    <% set pattern = '\\A' ~ atom ~ '(?:\\.' ~ atom ~ ')*@' ~ label ~ '(?:\\.' ~ label ~ ')+\\Z' %>
+    <% if owner_email | length > 254 or owner_email.split('@')[0] | length > 64 or not (owner_email | regex_search(pattern)) %>
+    Enter a single, valid email address.
+    <% endif %>
+
+owner_username:
+  type: str
+  help: System username for the project owner.
+  default: "<%= owner_fullname | lower | replace(' ', '_') %>"
+  validator: >-
+    <% if not (owner_username | regex_search('\\A[A-Za-z][A-Za-z0-9_-]{0,31}\\Z')) %>
+    Use 1–32 ASCII letters, digits, underscores or hyphens; start with a letter.
+    <% endif %>
+
+developing_lutea:
   type: bool
-  help: Are you developing lutea right now?
+  help: Install lutea as a path-relative editable package?
   default: false
+  when: false
