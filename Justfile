@@ -23,16 +23,32 @@ _default:
 init-python:
     uv sync --all-groups
 
+# Upgrade Python packages within declared constraints and sync all dependency groups
+[group('environment')]
+update-python:
+    uv sync --all-groups --upgrade
+
 # Install the Node environment
 [group('environment')]
 init-node:
     pnpm ci
+
+# Upgrade Node packages within declared ranges, updating the manifest and lockfile
+[group('environment')]
+update-node:
+    pnpm update
 
 # Ensure all package environments are initialised
 [group('environment')]
 init:
     just init-python
     just init-node
+
+# Upgrade both environments within declared dependency constraints
+[group('environment')]
+update:
+    just update-python
+    just update-node
 
 # Nuke the Python environment
 [group('environment')]
